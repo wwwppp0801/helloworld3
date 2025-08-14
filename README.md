@@ -8,7 +8,7 @@
 ## 🌐 当前 URLs
 - **开发服务器**: [https://3000-i8ox90hg6vnw3n59v9ci1-6532622b.e2b.dev](https://3000-i8ox90hg6vnw3n59v9ci1-6532622b.e2b.dev)
 - **API 健康检查**: [https://3000-i8ox90hg6vnw3n59v9ci1-6532622b.e2b.dev/api/hello](https://3000-i8ox90hg6vnw3n59v9ci1-6532622b.e2b.dev/api/hello)
-- **GitHub**: 待创建
+- **GitHub**: [https://github.com/wwwppp0801/helloworld3](https://github.com/wwwppp0801/helloworld3)
 
 ## ✅ 已完成功能
 
