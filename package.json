@@ -1,13 +1,30 @@
 {
   "name": "webapp",
+  "version": "1.0.0",
+  "description": "Hello World 网站 - 基于 Hono + Cloudflare Pages",
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:sandbox": "wrangler pages dev dist --ip 0.0.0.0 --port 3000",
     "build": "vite build",
-    "preview": "wrangler pages dev",
-    "deploy": "npm run build && wrangler pages deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "preview": "wrangler pages dev dist",
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name webapp",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
+    "test": "curl http://localhost:3000",
+    "git:commit": "git add . && git commit -m",
+    "git:status": "git status",
+    "git:log": "git log --oneline",
+    "pm2:start": "npm run clean-port && npm run build && pm2 start ecosystem.config.cjs",
+    "pm2:stop": "pm2 stop webapp",
+    "pm2:restart": "npm run clean-port && pm2 restart webapp",
+    "pm2:logs": "pm2 logs webapp --nostream",
+    "pm2:status": "pm2 list"
   },
+  "keywords": ["hono", "cloudflare", "hello-world", "web-app"],
+  "author": "Developer",
+  "license": "MIT",
   "dependencies": {
     "hono": "^4.9.1"
   },
